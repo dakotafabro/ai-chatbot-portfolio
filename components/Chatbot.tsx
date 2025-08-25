@@ -5,13 +5,15 @@ import { useAskAiMutation } from "../lib/services/faqBotApi";
 import LoadingDots from "./LoadingDots";
 import Message from "./Message";
 
-/**
- * Dakota: Chatbot keeps minimal state: an array of messages and an input.
- * We're intentionally skipping streaming for clarity in the course.
- */
 export default function Chatbot() {
-  const [messages, setMessages] = useState<{ role: "user" | "assistant"; content: string }[]>([
-    { role: "assistant", content: "Ask me about the course, the stack, or how to deploy. I'll keep it concise." }
+  const [messages, setMessages] = useState<
+    { role: "user" | "assistant"; content: string }[]
+  >([
+    {
+      role: "assistant",
+      content:
+        "Ask me about the course, the stack, or how to deploy. I'll keep it concise.",
+    },
   ]);
   const [question, setQuestion] = useState("");
   const inputRef = useRef<HTMLInputElement>(null);
@@ -31,7 +33,14 @@ export default function Chatbot() {
       const res = await askAi({ question: q, history: next }).unwrap();
       setMessages([...next, { role: "assistant", content: res.answer }]);
     } catch (err: any) {
-      setMessages([...next, { role: "assistant", content: "I had trouble answering that. Check your network or server logs." }]);
+      setMessages([
+        ...next,
+        {
+          role: "assistant",
+          content:
+            "I had trouble answering that. Check your network or server logs.",
+        },
+      ]);
     } finally {
       // Keep focus tight for accessibility
       inputRef.current?.focus();
@@ -40,9 +49,19 @@ export default function Chatbot() {
 
   return (
     <div>
-      <div aria-live="polite" aria-busy={isLoading} style={{ minHeight: 220, marginBottom: 12 }}>
-        {messages.map((m, i) => <Message key={i} role={m.role} content={m.content} />)}
-        {isLoading && <div className="small"><LoadingDots /> Thinking…</div>}
+      <div
+        aria-live="polite"
+        aria-busy={isLoading}
+        style={{ minHeight: 220, marginBottom: 12 }}
+      >
+        {messages.map((m, i) => (
+          <Message key={i} role={m.role} content={m.content} />
+        ))}
+        {isLoading && (
+          <div className="small">
+            <LoadingDots /> Thinking…
+          </div>
+        )}
       </div>
 
       <form onSubmit={onSubmit} style={{ display: "flex", gap: 8 }}>
@@ -59,7 +78,8 @@ export default function Chatbot() {
         </button>
       </form>
       <p className="small" style={{ marginTop: 8 }}>
-        Note: For demos and tests, set <code>MOCK_AI=1</code>. For real answers, add <code>OPENAI_API_KEY</code>.
+        Note: For demos and tests, set <code>MOCK_AI=1</code>. For real answers,
+        add <code>OPENAI_API_KEY</code>.
       </p>
     </div>
   );

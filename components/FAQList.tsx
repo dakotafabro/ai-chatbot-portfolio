@@ -5,7 +5,7 @@ import { useGetFaqsQuery } from "../lib/services/faqBotApi";
 import SearchBar from "./SearchBar";
 
 /**
- * Dakota: I keep filtering client-side to avoid premature optimization.
+ * I am filtering client-side to avoid premature optimization.
  * Learners can move this to the API later to explore query params.
  */
 export default function FAQList() {
@@ -34,11 +34,15 @@ export default function FAQList() {
           <li key={f.id} style={{ padding: "8px 0" }}>
             <details>
               <summary style={{ cursor: "pointer" }}>{f.question}</summary>
-              <p className="small" style={{ marginTop: 6 }}>{f.answer}</p>
+              <p className="small" style={{ marginTop: 6 }}>
+                {f.answer}
+              </p>
             </details>
           </li>
         ))}
-        {filtered.length === 0 && <li className="small">No matches. Try a different search.</li>}
+        {filtered.length === 0 && (
+          <li className="small">No matches. Try a different search.</li>
+        )}
       </ul>
     </div>
   );
