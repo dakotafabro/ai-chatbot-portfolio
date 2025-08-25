@@ -1,8 +1,4 @@
-.DS_Store
-node_modules
-.tmp
-npm-debug.log
-node_modules
+# Dakota: standard Next.js ignores + environment files
 node_modules
 .next
 out
