@@ -1,24 +1,22 @@
 /**
- * Dakota: Playwright drives the browser for end-to-end tests.
+ * Playwright drives the browser for end-to-end tests.
  * Keep tests deterministic by setting MOCK_AI=1.
  */
-import { defineConfig, devices } from '@playwright/test';
+import { defineConfig, devices } from "@playwright/test";
 
 export default defineConfig({
-  testDir: './tests/e2e',
+  testDir: "./tests/e2e",
   timeout: 60_000,
   fullyParallel: true,
-  reporter: 'html',
+  reporter: "html",
   use: {
-    baseURL: 'http://localhost:3000',
-    headless: true
+    baseURL: "http://localhost:3000",
+    headless: true,
   },
-  projects: [
-    { name: 'chromium', use: { ...devices['Desktop Chrome'] } }
-  ],
+  projects: [{ name: "chromium", use: { ...devices["Desktop Chrome"] } }],
   webServer: {
-    command: 'MOCK_AI=1 next dev',
+    command: "MOCK_AI=1 next dev",
     port: 3000,
-    reuseExistingServer: !process.env.CI
-  }
+    reuseExistingServer: !process.env.CI,
+  },
 });

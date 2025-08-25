@@ -1,5 +1,5 @@
 /**
- * Dakota: Simple, accessible loading indicator.
+ * Simple, accessible loading indicator.
  */
 export default function LoadingDots() {
   return (

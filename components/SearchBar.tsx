@@ -3,12 +3,12 @@
 import { useId } from "react";
 
 /**
- * Dakota: Controlled input for search. Keyboard first.
+ * Controlled input for search. Keyboard first.
  */
 export default function SearchBar({
   value,
   onChange,
-  placeholder = "Search FAQs…"
+  placeholder = "Search FAQs…",
 }: {
   value: string;
   onChange: (v: string) => void;

@@ -12,7 +12,7 @@ type AskResponse = { answer: string };
 type FaqsResponse = { faqs: FAQ[] };
 
 /**
- * Dakota: A single API slice keeps this demo tight. In a bigger app,
+ * A single API slice keeps this demo tight. In a bigger app,
  * split by domain (faqApi, authApi, etc.).
  */
 export const faqBotApi = createApi({

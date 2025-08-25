@@ -1,4 +1,4 @@
-/* Dakota: keep styling minimal and readable; learners can iterate freely. */
+/* Keep styling minimal and readable; learners can iterate freely. */
 :root {
   --bg: #0b0c10;
   --panel: #111217;
@@ -8,11 +8,17 @@
   --border: #22242b;
 }
 
-* { box-sizing: border-box; }
-html, body { height: 100%; }
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
 body {
   margin: 0;
-  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto,
+    Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
   background: var(--bg);
   color: var(--text);
 }
@@ -30,7 +36,9 @@ body {
   padding: 16px;
 }
 
-input, button, textarea {
+input,
+button,
+textarea {
   font: inherit;
 }
 
@@ -51,7 +59,9 @@ button {
   color: var(--text);
   cursor: pointer;
 }
-button:hover { border-color: var(--accent); }
+button:hover {
+  border-color: var(--accent);
+}
 kbd {
   background: #1f2330;
   border: 1px solid var(--border);
@@ -59,6 +69,15 @@ kbd {
   border-radius: 6px;
   font-size: 0.85em;
 }
-.small { color: var(--muted); font-size: 0.9rem; }
-.prose p { line-height: 1.6; }
-hr { border: none; border-top: 1px solid var(--border); margin: 20px 0; }
+.small {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+.prose p {
+  line-height: 1.6;
+}
+hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 20px 0;
+}
