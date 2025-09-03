@@ -6,30 +6,29 @@ type FAQ = {
   answer: string;
 };
 
-type AskRequest = { question: string; history?: { role: "user" | "assistant"; content: string }[] };
+type AskRequest = {
+  question: string;
+  history?: { role: "user" | "assistant"; content: string }[];
+};
 type AskResponse = { answer: string };
 
 type FaqsResponse = { faqs: FAQ[] };
 
-/**
- * A single API slice keeps this demo tight. In a bigger app,
- * split by domain (faqApi, authApi, etc.).
- */
 export const faqBotApi = createApi({
   reducerPath: "faqBotApi",
   baseQuery: fetchBaseQuery({ baseUrl: "" }),
   endpoints: (builder) => ({
     getFaqs: builder.query<FaqsResponse, void>({
-      query: () => "/api/faqs"
+      query: () => "/api/faqs",
     }),
     askAi: builder.mutation<AskResponse, AskRequest>({
       query: (body) => ({
         url: "/api/ask",
         method: "POST",
-        body
-      })
-    })
-  })
+        body,
+      }),
+    }),
+  }),
 });
 
 export const { useGetFaqsQuery, useAskAiMutation } = faqBotApi;

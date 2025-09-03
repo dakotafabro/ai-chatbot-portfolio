@@ -2,28 +2,56 @@
   "faqs": [
     {
       "id": "intro-1",
-      "question": "What are we building in this course?",
-      "answer": "You're building an OpenAI-powered FAQ chatbot with Next.js, RTK Query, and tested with Jest + Playwright."
+      "question": "Who is Dakota Fabro?",
+      "answer": "Dakota Fabro (they/them) is a full-stack developer, educator, and founder of Eleventh House Studios. Their work lives at the intersection of technology, purpose, and reflection—building systems that are technically sound, intuitive, and meaningful."
     },
     {
-      "id": "setup-1",
-      "question": "How do I run the project locally?",
-      "answer": "Install dependencies, add your .env.local with OPENAI_API_KEY, then run `npm run dev`."
+      "id": "studio-1",
+      "question": "What is their latest entreprenuerial project?",
+      "answer": "Eleventh House Studios is Dakota’s mobile app studio focused on products that foster self-reflection, interdependence, and human-centered engagement."
     },
     {
-      "id": "ai-1",
-      "question": "Where do AI responses come from?",
-      "answer": "From the /api/ask route which integrates with OpenAI. You can toggle MOCK_AI to return canned responses."
+      "id": "projects-1",
+      "question": "What kinds of projects have they built?",
+      "answer": "Dakota’s portfolio spans community-first mobile apps, internal tooling for creative agencies, education platforms for LAUSD, public health resources, and business transformation sites. Across projects, the focus is on blending technical execution with accessibility, scalability, and thoughtful design. To know more, use the chat to ask more questions about each project."
     },
     {
-      "id": "testing-1",
-      "question": "Do we have tests?",
-      "answer": "Yes. Unit tests with Jest and e2e tests with Playwright. Run `npm run test` or `npm run test:e2e`."
+      "id": "stack-1",
+      "question": "What technologies do they work with?",
+      "answer": "Dakota works across the stack with React, Next.js, React Native, GraphQL, Firebase, and PostgreSQL. They also bring experience in Node.js, Haskell, and OpenAI API integrations—balancing frontend usability with backend scalability. Dakota believes tools can always be learned. Big picture thinking and systems design is where Dakota tends to focus more of their energy on."
+    },
+
+    {
+      "id": "teaching-1",
+      "question": "How do they approach learning, teaching, and mentorship?",
+      "answer": "Dakota’s background in education informs their teaching style. As a LinkedIn Learning instructor, they’ve guided thousands of learners through complex engineering topics by breaking them down into approachable, hands-on lessons. Their courses emphasize accessibility, inclusion, and practical skill-building."
     },
     {
-      "id": "deploy-1",
-      "question": "How do I deploy this app?",
-      "answer": "Use Vercel. Set OPENAI_API_KEY in project settings, then connect your repo and deploy."
+      "id": "values-1",
+      "question": "What guides their work as an engineer?",
+      "answer": "Dakota is driven by purpose. They see software as more than code—it’s a mirror for self-discovery and collective growth. Their approach is shaped by backgrounds in psychology, theology, and education, ensuring that the systems they design support both technical excellence and human needs."
+    },
+    {
+      "id": "education-1",
+      "question": "What is their educational background?",
+      "answer": "Dakota holds a BA in Psychology & Organizational Leadership, an MA in Theology, Ethics & Social Change, and an MA in Education, and is completing an AS in Computer Science. This interdisciplinary foundation informs their engineering practice and their human-centered design philosophy."
+    },
+    {
+      "id": "contact-1",
+      "question": "How can I connect with them?",
+      "answer": "The best way to connect is through LinkedIn: [linkedin.com/in/dakotafabro](https://www.linkedin.com/in/dakotafabro). Dakota is always open to conversations about building meaningful products, AI integrations, or purpose-driven systems."
+    }
+  ],
+  "archive": [
+    {
+      "id": "agency-1",
+      "question": "What did you do at Outright Agency?",
+      "answer": "At Outright, Dakota architected backend systems with TypeScript and PostgreSQL, introduced CI/CD pipelines, and created collaborative spaces that strengthened the relationship between designers and engineers. Their work included asset libraries, debugging dashboards, and CMS customizations that reduced bottlenecks for cross-functional teams."
+    },
+    {
+      "id": "studio-1",
+      "question": "What is Eleventh House Studios?",
+      "answer": "Eleventh House Studios is Dakota’s mobile app studio focused on products that foster self-reflection, interdependence, and human-centered engagement. Projects include Arcana (AI-powered astrology and tarot readings), Loop (home and life care), and Carabiner (a productivity tool designed with neurodivergent users in mind)."
     }
   ]
 }
