@@ -1,9 +1,9 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useAskAiMutation } from "../lib/services/faqBotApi";
 import LoadingDots from "./LoadingDots";
-import Message from "./Message";
+import { MarkdownMessage } from "./MarkdownMessage";
 
 export default function Chatbot() {
   const [messages, setMessages] = useState<
@@ -12,19 +12,20 @@ export default function Chatbot() {
     {
       role: "assistant",
       content:
-        "Ask me about the course, the stack, or how to deploy. I'll keep it concise.",
+        "Hello! How can I assist you today in learning more about Dakota Fabro's ethos, work, projects, or professional experience?",
     },
   ]);
   const [question, setQuestion] = useState("");
-  const inputRef = useRef<HTMLInputElement>(null);
   const [askAi, { isLoading }] = useAskAiMutation();
+
+  const inputRef = useRef<HTMLInputElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   async function onSubmit(e: React.FormEvent) {
     e.preventDefault();
     const q = question.trim();
     if (!q) return;
 
-    // Optimistic update
     const next = [...messages, { role: "user" as const, content: q }];
     setMessages(next);
     setQuestion("");
@@ -42,21 +43,57 @@ export default function Chatbot() {
         },
       ]);
     } finally {
-      // Keep focus tight for accessibility
       inputRef.current?.focus();
     }
   }
 
+  useEffect(() => {
+    const el = containerRef.current;
+    if (!el) return;
+    requestAnimationFrame(() => {
+      el.scrollTop = el.scrollHeight; // hard jump (always at bottom)
+      // If you prefer smooth movement sometimes, swap with:
+      // el.scrollTo({ top: el.scrollHeight, behavior: "instant" as ScrollBehavior });
+    });
+  }, [messages, isLoading]);
+
   return (
     <div>
       <div
+        ref={containerRef}
         aria-live="polite"
         aria-busy={isLoading}
-        style={{ minHeight: 220, marginBottom: 12 }}
+        style={{
+          minHeight: 220,
+          marginBottom: 12,
+          height: "50vh",
+          overflowY: "auto",
+          bottom: 0,
+          overscrollBehavior: "contain",
+          scrollbarGutter: "stable",
+        }}
       >
         {messages.map((m, i) => (
-          <Message key={i} role={m.role} content={m.content} />
+          <div key={i}>
+            {m.role === "assistant" ? (
+              <p>
+                <MarkdownMessage md={m.content} role="assistant" />
+              </p>
+            ) : (
+              <p
+                style={{
+                  justifySelf: "right",
+                  backgroundColor: "#9F7C19",
+                  borderRadius: ".5rem",
+                  padding: ".1rem 1rem",
+                }}
+              >
+                <MarkdownMessage md={m.content} />
+              </p>
+            )}
+          </div>
         ))}
+
         {isLoading && (
           <div className="small">
             <LoadingDots /> Thinking…
@@ -71,16 +108,17 @@ export default function Chatbot() {
           placeholder="Ask a question…"
           value={question}
           onChange={(e) => setQuestion(e.target.value)}
-          aria-label="Ask the chatbot a question"
+          aria-label="Ask me a question"
         />
-        <button type="submit" aria-label="Send message" disabled={isLoading}>
+        <button
+          type="submit"
+          aria-label="Send message"
+          disabled={isLoading}
+          style={{ backgroundColor: "#9F7C19" }}
+        >
           {isLoading ? "Sending…" : "Send"}
         </button>
       </form>
-      <p className="small" style={{ marginTop: 8 }}>
-        Note: For demos and tests, set <code>MOCK_AI=1</code>. For real answers,
-        add <code>OPENAI_API_KEY</code>.
-      </p>
     </div>
   );
 }

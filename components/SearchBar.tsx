@@ -8,7 +8,7 @@ import { useId } from "react";
 export default function SearchBar({
   value,
   onChange,
-  placeholder = "Search FAQs…",
+  placeholder = "Search",
 }: {
   value: string;
   onChange: (v: string) => void;
