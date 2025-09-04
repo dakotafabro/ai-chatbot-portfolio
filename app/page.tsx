@@ -3,10 +3,6 @@ import FAQList from "../components/FAQList";
 import Image from "next/image";
 import smileySticker from "../assets/smile-sticker.png";
 
-/**
- * Landing page shows both the FAQ list and the chatbot.
- * The idea is to keep answers discoverable (FAQ) and conversational (chat).
- */
 export default function HomePage() {
   return (
     <main>
@@ -30,17 +26,10 @@ export default function HomePage() {
           </p>
         </div>
       </div>
-      {/* <small
-        className="small"
-        style={{ marginTop: 0, marginBottom: "1rem", display: "block" }}
-      >
-        Tip: Use <kbd>Tab</kbd> to move between the question input and the Send
-        button. Everything here is keyboard-accessible.
-      </small> */}
 
       <div className="faq-chatbot-container">
         <section className="panel" aria-labelledby="faq-heading">
-          <h2 id="faq-heading">About Dakota</h2>
+          <h2 id="faq-heading">Frequently Asked Questions</h2>
           <FAQList />
         </section>
 
@@ -53,7 +42,7 @@ export default function HomePage() {
       </div>
 
       <small className="copyright">
-        © 2025 Dakota Fabro. All rights reserved.
+        © 2025 <a href="https://www.linkedin.com/in/dakotafabro" target="_blank" rel="noreferrer">Dakota Fabro</a> | All rights reserved.
       </small>
     </main>
   );

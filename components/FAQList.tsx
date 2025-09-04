@@ -27,7 +27,7 @@ export default function FAQList() {
 
   return (
     <div style={{ height: "fit-content" }}>
-      <SearchBar value={query} onChange={setQuery} />
+      {/* <SearchBar value={query} onChange={setQuery} /> */}
       <ul
         style={{
           listStyle: "none",
