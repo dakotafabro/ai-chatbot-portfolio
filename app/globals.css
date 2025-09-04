@@ -30,6 +30,14 @@ body {
   justify-content: center;
   margin: 2rem;
   padding-bottom: 2rem;
+  align-items: center;
+}
+
+.copyright-link {
+  color: white;
+  display: block;
+  padding: 0 0.5rem;
+  text-decoration: underline;
 }
 
 .container {
