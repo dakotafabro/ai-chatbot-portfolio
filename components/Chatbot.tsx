@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { useAskAiMutation } from "../lib/services/faqBotApi";
 import LoadingDots from "./LoadingDots";
 import { MarkdownMessage } from "./MarkdownMessage";
+import { TailSpin } from "react-loader-spinner";
 
 export default function Chatbot() {
   const [messages, setMessages] = useState<
@@ -94,8 +95,16 @@ export default function Chatbot() {
           </div>
         ))}
         {isLoading && (
-          <div className="small">
-            <LoadingDots /> Thinking…
+          <div
+            className="small"
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              alignItems: "center",
+              gap: ".75rem",
+            }}
+          >
+            <LoadingDots color="#9F7C19" /> Thinking…
           </div>
         )}
       </div>
@@ -118,7 +127,7 @@ export default function Chatbot() {
           disabled={isLoading}
           style={{ backgroundColor: "#9F7C19" }}
         >
-          {isLoading ? "Sending…" : "Send"}
+          {isLoading ? <LoadingDots color="#9d9a94ff" /> : "Send"}
         </button>
       </form>
     </div>

@@ -62,6 +62,7 @@ export function MarkdownMessage({ md, panelBg, role = "" }: Props) {
               borderRadius: ".5rem",
               padding: ".25rem 1rem",
               border: "1px solid #E5E7EB",
+              width: "95%",
             }
           : {}
       }
@@ -111,6 +112,7 @@ export function MarkdownMessage({ md, panelBg, role = "" }: Props) {
                 lineHeight: 1.6,
                 color: secondary,
                 fontSize: ".9rem",
+                textWrap: "pretty",
               }}
               {...props}
             />
@@ -160,38 +162,6 @@ export function MarkdownMessage({ md, panelBg, role = "" }: Props) {
               {...props}
             />
           ),
-          // code: ({ node, inline, ...props }) =>
-          //   inline ? (
-          //     <code
-          //       style={{
-          //         background: inlineCodeBg,
-          //         padding: "0.2rem 0.35rem",
-          //         borderRadius: "0.25rem",
-          //         fontSize: "0.875rem",
-          //       }}
-          //       {...props}
-          //     />
-          //   ) : (
-          //     <pre
-          //       style={{
-          //         background: blockCodeBg,
-          //         border: `1px solid ${blockCodeBorder}`,
-          //         padding: "0.85rem",
-          //         borderRadius: "0.5rem",
-          //         overflowX: "auto",
-          //         margin: "0.6rem 0",
-          //       }}
-          //     >
-          //       <code
-          //         style={{
-          //           // inherit text color for better contrast on both panels
-          //           color: baseColor,
-          //           fontSize: "0.95rem",
-          //         }}
-          //         {...props}
-          //       />
-          //     </pre>
-          //   ),
         }}
       >
         {md}
