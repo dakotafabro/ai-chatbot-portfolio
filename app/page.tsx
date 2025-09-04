@@ -9,7 +9,8 @@ export default function HomePage() {
   return (
     <main>
       <h1 style={{ marginBottom: 8 }}>
-        Dakot<span style={{ color: "#9F7C19" }}>AI</span>
+        Dakot<span style={{ color: "#9F7C19" }}>AI</span>, Fullstack AI Product
+        Engineer
       </h1>
       <p className="small" style={{ marginTop: 0 }}>
         An interactive way to explore my work and story.
@@ -26,7 +27,7 @@ export default function HomePage() {
         style={{ display: "grid", gridTemplateColumns: "1fr 1.2fr", gap: 16 }}
       >
         <section className="panel" aria-labelledby="faq-heading">
-          <h2 id="faq-heading">About Dakota</h2>
+          <h2 id="faq-heading">About Dakota Fabro</h2>
           <FAQList />
         </section>
 
