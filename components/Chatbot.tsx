@@ -88,7 +88,7 @@ export default function Chatbot() {
                   padding: ".1rem 1rem",
                 }}
               >
-                <MarkdownMessage md={m.content} />
+                <MarkdownMessage md={m.content} role={""} />
               </p>
             )}
           </div>

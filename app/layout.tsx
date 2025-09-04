@@ -2,8 +2,8 @@ import "./globals.css";
 import { Providers } from "../lib/providers";
 
 export const metadata = {
-  title: "AI FAQ ChatBot — Next.js",
-  description: "OpenAI-powered FAQ chatbot for the course.",
+  title: "DakotAI - A portfolio, but make it AI",
+  description: "An interactive, AI-powered way to explore my work and story",
 };
 
 /**

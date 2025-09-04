@@ -17,8 +17,8 @@ body {
 }
 body {
   margin: 0;
-  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto,
-    Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  font-family: "Fira Code", ui-sans-serif, system-ui, -apple-system, Segoe UI,
+    Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
   background: var(--bg);
   color: var(--text);
 }
@@ -80,4 +80,17 @@ hr {
   border: none;
   border-top: 1px solid var(--border);
   margin: 20px 0;
+}
+
+li {
+  font-size: 0.9rem;
+}
+
+.faq-header,
+.chatbot-heading {
+  font-size: 0.95rem;
+}
+
+h2 {
+  font-size: 0.95rem;
 }
