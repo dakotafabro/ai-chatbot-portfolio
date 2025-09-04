@@ -64,7 +64,7 @@ export function MarkdownMessage({ md, panelBg, role = "" }: Props) {
           : {}
       }
     >
-      {role !== "" && <small>Assistant:</small>}
+      {role !== "" && <small>DakotAI:</small>}
       <ReactMarkdown
         rehypePlugins={[rehypeSanitize]}
         components={{
