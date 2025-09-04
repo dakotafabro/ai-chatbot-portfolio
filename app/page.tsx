@@ -42,7 +42,17 @@ export default function HomePage() {
       </div>
 
       <small className="copyright">
-        © 2025 <a href="https://www.linkedin.com/in/dakotafabro" target="_blank" rel="noreferrer">Dakota Fabro</a> | All rights reserved.
+        © 2025
+        <a
+          className="copyright-link"
+          href="https://www.linkedin.com/in/dakotafabro"
+          target="_blank"
+          rel="noreferrer"
+        >
+          {"  "}
+          Dakota Fabro
+        </a>{" "}
+        | All rights reserved.
       </small>
     </main>
   );
