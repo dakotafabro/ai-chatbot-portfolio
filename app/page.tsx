@@ -38,13 +38,7 @@ export default function HomePage() {
         button. Everything here is keyboard-accessible.
       </small> */}
 
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "1fr 1.2fr",
-          gap: 16,
-        }}
-      >
+      <div className="faq-chatbot-container">
         <section className="panel" aria-labelledby="faq-heading">
           <h2 id="faq-heading">About Dakota</h2>
           <FAQList />
@@ -57,6 +51,10 @@ export default function HomePage() {
           <Chatbot />
         </section>
       </div>
+
+      <small className="copyright">
+        © 2025 Dakota Fabro. All rights reserved.
+      </small>
     </main>
   );
 }
