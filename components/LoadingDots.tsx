@@ -1,10 +1,6 @@
-/**
- * Simple, accessible loading indicator.
- */
-export default function LoadingDots() {
-  return (
-    <span role="status" aria-live="polite" aria-label="Loading">
-      • • •
-    </span>
-  );
+"use client";
+import { ThreeDots } from "react-loader-spinner";
+
+export default function LoadingDots({ color }) {
+  return <ThreeDots height="18" width="48" color={color} ariaLabel="loading" />;
 }
