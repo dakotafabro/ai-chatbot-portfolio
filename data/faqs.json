@@ -11,6 +11,11 @@
       "answer": "Eleventh House Studios is Dakota’s mobile app studio focused on products that foster self-reflection, interdependence, and human-centered engagement."
     },
     {
+      "id": "agency-1",
+      "question": "What did they do at their most recent role?",
+      "answer": "At [Outright](https://weareoutright.com), Dakota architected backend systems with TypeScript and PostgreSQL, introduced CI/CD pipelines, and created collaborative spaces that strengthened the relationship between designers and engineers. Their work included asset libraries, debugging dashboards, and CMS customizations that reduced bottlenecks for cross-functional teams."
+    },
+    {
       "id": "projects-1",
       "question": "What kinds of projects have they built?",
       "answer": "Dakota’s portfolio spans community-first mobile apps, internal tooling for creative agencies, education platforms for LAUSD, public health resources, and business transformation sites. Across projects, the focus is on blending technical execution with accessibility, scalability, and thoughtful design. To know more, use the chat to ask more questions about each project."
@@ -39,15 +44,10 @@
     {
       "id": "contact-1",
       "question": "How can I connect with them?",
-      "answer": "The best way to connect is through LinkedIn: [linkedin.com/in/dakotafabro](https://www.linkedin.com/in/dakotafabro). Dakota enjoys talking about building meaningful products, AI integrations, or purpose-driven systems."
+      "answer": "The best way to connect is through [LinkedIn](https://www.linkedin.com/in/dakotafabro) or [schedule a time](https://calendly.com/dakotafabrodev/30min) to meet with Dakota. Dakota enjoys talking about building meaningful products, AI integrations, or purpose-driven systems."
     }
   ],
   "archive": [
-    {
-      "id": "agency-1",
-      "question": "What did you do at Outright Agency?",
-      "answer": "At Outright, Dakota architected backend systems with TypeScript and PostgreSQL, introduced CI/CD pipelines, and created collaborative spaces that strengthened the relationship between designers and engineers. Their work included asset libraries, debugging dashboards, and CMS customizations that reduced bottlenecks for cross-functional teams."
-    },
     {
       "id": "studio-1",
       "question": "What is Eleventh House Studios?",
