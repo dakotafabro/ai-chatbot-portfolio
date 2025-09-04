@@ -51,7 +51,7 @@ export default function Message({
           }}
         >
           {/* Render assistant/user content as Markdown with adaptive styling */}
-          <MarkdownMessage md={content} panelBg={bg} />
+          <MarkdownMessage md={content} panelBg={bg} role="" />
         </div>
       </div>
     </div>

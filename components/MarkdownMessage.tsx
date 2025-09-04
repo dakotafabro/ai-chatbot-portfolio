@@ -8,6 +8,7 @@ type Props = {
   md: string;
   /** Background color of the parent panel (e.g. "#12141c" or "#9F7C19") */
   panelBg?: string;
+  role: string;
 };
 
 function hexToRgb(hex: string) {
@@ -39,7 +40,7 @@ function isDarkColor(hex?: string) {
   }
 }
 
-export function MarkdownMessage({ md, panelBg, role = null }: Props) {
+export function MarkdownMessage({ md, panelBg, role = "" }: Props) {
   const dark = isDarkColor(panelBg);
   const baseColor = dark ? "#E5E7EB" : "#111827"; // text
   const secondary = dark ? "rgba(229,231,235,0.85)" : "rgba(17,24,39,0.9)";
@@ -51,24 +52,26 @@ export function MarkdownMessage({ md, panelBg, role = null }: Props) {
   return (
     <div
       style={
-        role && {
-          color: baseColor,
-          justifyContent: "left",
-          backgroundColor: "#12141c",
-          borderRadius: ".5rem",
-          padding: ".5rem 1rem",
-          border: "1px solid #E5E7EB",
-        }
+        role !== ""
+          ? {
+              color: baseColor,
+              justifyContent: "left",
+              backgroundColor: "#12141c",
+              borderRadius: ".5rem",
+              padding: ".5rem 1rem",
+              border: "1px solid #E5E7EB",
+            }
+          : {}
       }
     >
-      {role && <small>Assistant:</small>}
+      {role !== "" && <small>Assistant:</small>}
       <ReactMarkdown
         rehypePlugins={[rehypeSanitize]}
         components={{
           h2: ({ node, ...props }) => (
             <h2
               style={{
-                fontSize: "1.25rem",
+                fontSize: "1rem",
                 fontWeight: 600,
                 margin: "1rem 0 0.5rem",
                 lineHeight: 1.25,
@@ -80,7 +83,7 @@ export function MarkdownMessage({ md, panelBg, role = null }: Props) {
           h3: ({ node, ...props }) => (
             <h3
               style={{
-                fontSize: "1.1rem",
+                fontSize: ".95rem",
                 fontWeight: 600,
                 margin: "0.75rem 0 0.35rem",
                 lineHeight: 1.25,
@@ -95,6 +98,7 @@ export function MarkdownMessage({ md, panelBg, role = null }: Props) {
                 margin: "0.5rem 0",
                 lineHeight: 1.6,
                 color: secondary,
+                fontSize: ".97rem",
               }}
               {...props}
             />
@@ -144,38 +148,38 @@ export function MarkdownMessage({ md, panelBg, role = null }: Props) {
               {...props}
             />
           ),
-          code: ({ node, inline, ...props }) =>
-            inline ? (
-              <code
-                style={{
-                  background: inlineCodeBg,
-                  padding: "0.2rem 0.35rem",
-                  borderRadius: "0.25rem",
-                  fontSize: "0.875rem",
-                }}
-                {...props}
-              />
-            ) : (
-              <pre
-                style={{
-                  background: blockCodeBg,
-                  border: `1px solid ${blockCodeBorder}`,
-                  padding: "0.85rem",
-                  borderRadius: "0.5rem",
-                  overflowX: "auto",
-                  margin: "0.6rem 0",
-                }}
-              >
-                <code
-                  style={{
-                    // inherit text color for better contrast on both panels
-                    color: baseColor,
-                    fontSize: "0.95rem",
-                  }}
-                  {...props}
-                />
-              </pre>
-            ),
+          // code: ({ node, inline, ...props }) =>
+          //   inline ? (
+          //     <code
+          //       style={{
+          //         background: inlineCodeBg,
+          //         padding: "0.2rem 0.35rem",
+          //         borderRadius: "0.25rem",
+          //         fontSize: "0.875rem",
+          //       }}
+          //       {...props}
+          //     />
+          //   ) : (
+          //     <pre
+          //       style={{
+          //         background: blockCodeBg,
+          //         border: `1px solid ${blockCodeBorder}`,
+          //         padding: "0.85rem",
+          //         borderRadius: "0.5rem",
+          //         overflowX: "auto",
+          //         margin: "0.6rem 0",
+          //       }}
+          //     >
+          //       <code
+          //         style={{
+          //           // inherit text color for better contrast on both panels
+          //           color: baseColor,
+          //           fontSize: "0.95rem",
+          //         }}
+          //         {...props}
+          //       />
+          //     </pre>
+          //   ),
         }}
       >
         {md}
