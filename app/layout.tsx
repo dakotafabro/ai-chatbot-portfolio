@@ -2,7 +2,7 @@ import "./globals.css";
 import { Providers } from "../lib/providers";
 
 export const metadata = {
-  title: "DakotAI - A portfolio, but make it AI",
+  title: "DakotAI - Fullstack AI Engineer",
   description: "An interactive, AI-powered way to explore my work and story",
 };
 
