@@ -3,6 +3,8 @@
 
 import ReactMarkdown from "react-markdown";
 import rehypeSanitize from "rehype-sanitize";
+import smileySticker from "../assets/smile-sticker.png";
+import Image from "next/image";
 
 type Props = {
   md: string;
@@ -58,13 +60,24 @@ export function MarkdownMessage({ md, panelBg, role = "" }: Props) {
               justifyContent: "left",
               backgroundColor: "#12141c",
               borderRadius: ".5rem",
-              padding: ".5rem 1rem",
+              padding: ".25rem 1rem",
               border: "1px solid #E5E7EB",
             }
           : {}
       }
     >
-      {role !== "" && <small>DakotAI:</small>}
+      {role !== "" && (
+        <small
+          style={{
+            marginTop: "1rem",
+            display: "flex",
+            position: "relative",
+            gap: ".25rem",
+          }}
+        >
+          DakotAI:
+        </small>
+      )}
       <ReactMarkdown
         rehypePlugins={[rehypeSanitize]}
         components={{
@@ -95,10 +108,9 @@ export function MarkdownMessage({ md, panelBg, role = "" }: Props) {
           p: ({ node, ...props }) => (
             <p
               style={{
-                margin: "0.5rem 0",
                 lineHeight: 1.6,
                 color: secondary,
-                fontSize: ".97rem",
+                fontSize: ".9rem",
               }}
               {...props}
             />

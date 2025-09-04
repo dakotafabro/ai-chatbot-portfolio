@@ -93,7 +93,6 @@ export default function Chatbot() {
             )}
           </div>
         ))}
-
         {isLoading && (
           <div className="small">
             <LoadingDots /> Thinking…
@@ -101,7 +100,10 @@ export default function Chatbot() {
         )}
       </div>
 
-      <form onSubmit={onSubmit} style={{ display: "flex", gap: 8 }}>
+      <form
+        onSubmit={onSubmit}
+        style={{ display: "flex", gap: 8, position: "relative", bottom: 0 }}
+      >
         <input
           ref={inputRef}
           type="text"

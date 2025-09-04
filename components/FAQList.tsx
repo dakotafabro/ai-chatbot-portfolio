@@ -3,6 +3,7 @@
 import { useMemo, useState } from "react";
 import { useGetFaqsQuery } from "../lib/services/faqBotApi";
 import SearchBar from "./SearchBar";
+import { MarkdownMessage } from "./MarkdownMessage";
 
 export default function FAQList() {
   const { data, isLoading, isError } = useGetFaqsQuery();
@@ -21,7 +22,8 @@ export default function FAQList() {
   }, [faqs, query]);
 
   if (isLoading) return <div>Loading...</div>;
-  if (isError) return <div>Failed to load all the things.</div>;
+  if (isError)
+    return <div>Ah nutz. Failed to load all the things. I'll try again.</div>;
 
   return (
     <div style={{ height: "fit-content" }}>
@@ -31,12 +33,14 @@ export default function FAQList() {
           listStyle: "none",
           padding: ".5rem 0rem 0rem 0rem",
           marginTop: 12,
+          overflow: "scroll",
+          height: "100%",
         }}
       >
         {filtered.map((f) => {
           const isOpen = openId === f.id;
           return (
-            <li key={f.id} style={{ padding: "8px 0" }}>
+            <li key={f.id} style={{ padding: ".5rem 0", color: "#9F7C19" }}>
               <details
                 open={isOpen}
                 onClick={(e) => {
@@ -48,13 +52,12 @@ export default function FAQList() {
                 <p
                   className="small"
                   style={{
-                    marginTop: 6,
-                    fontSize: 16,
-                    padding: ".5rem 1rem",
+                    fontSize: 14,
+                    padding: "0 .5rem",
                     color: "#9F7C19",
                   }}
                 >
-                  {f.answer}
+                  <MarkdownMessage md={f.answer} panelBg={""} role="" />
                 </p>
               </details>
             </li>
