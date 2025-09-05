@@ -3,6 +3,8 @@ import FAQList from "../components/FAQList";
 import Image from "next/image";
 import smileySticker from "../assets/smile-sticker.png";
 
+export const dynamic = "force-dynamic";
+
 export default function HomePage() {
   return (
     <main>

@@ -4,6 +4,7 @@ import { Analytics } from "@vercel/analytics/next";
 import Script from "next/script";
 import GAListener from "./ga_listener";
 import { event } from "../lib/gtag";
+import { Suspense } from "react";
 
 export const metadata = {
   title: "DakotAI - Fullstack AI Engineer",
@@ -27,34 +28,36 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        {children}
+        <Suspense fallback={<div />}>
+          {children}
 
-        {gaId ? (
-          <>
-            {/* Load the GA library */}
-            <Script
-              src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}
-              strategy="afterInteractive"
-            />
-            {/* Initialize gtag */}
-            <Script id="ga-init" strategy="afterInteractive">
-              {`
+          {gaId ? (
+            <>
+              {/* Load the GA library */}
+              <Script
+                src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}
+                strategy="afterInteractive"
+              />
+              {/* Initialize gtag */}
+              <Script id="ga-init" strategy="afterInteractive">
+                {`
                 window.dataLayer = window.dataLayer || [];
                 function gtag(){dataLayer.push(arguments);}
                 gtag('js', new Date());
                 gtag('config', '${gaId}', { send_page_view: false });
               `}
-            </Script>
-          </>
-        ) : null}
-        <Script id="ga-consent" strategy="afterInteractive">
-          {`gtag('consent', 'default', { ad_storage: 'denied', analytics_storage: 'denied' });`}
-        </Script>
-        <GAListener />
-        <Analytics />
-        <Providers>
-          <div className="container">{children}</div>
-        </Providers>
+              </Script>
+            </>
+          ) : null}
+          <Script id="ga-consent" strategy="afterInteractive">
+            {`gtag('consent', 'default', { ad_storage: 'denied', analytics_storage: 'denied' });`}
+          </Script>
+          <GAListener />
+          <Analytics />
+          <Providers>
+            <div className="container">{children}</div>
+          </Providers>
+        </Suspense>
       </body>
     </html>
   );
