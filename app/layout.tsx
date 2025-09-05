@@ -1,6 +1,7 @@
 import "./globals.css";
 import { Providers } from "../lib/providers";
 import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import Script from "next/script";
 import GAListener from "./ga_listener";
 import { event } from "../lib/gtag";
@@ -53,6 +54,7 @@ export default function RootLayout({
             </Script>
             <GAListener />
             <Analytics />
+            <SpeedInsights />
 
             <div className="container">{children}</div>
           </Providers>
