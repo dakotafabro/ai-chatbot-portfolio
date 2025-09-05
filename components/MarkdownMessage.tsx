@@ -3,7 +3,7 @@
 
 import ReactMarkdown from "react-markdown";
 import rehypeSanitize from "rehype-sanitize";
-import smileySticker from "../assets/smile-sticker.png";
+import KODA_THINK from "../assets/koda-think.png";
 import Image from "next/image";
 
 type Props = {
@@ -68,15 +68,23 @@ export function MarkdownMessage({ md, panelBg, role = "" }: Props) {
       }
     >
       {role !== "" && (
-        <small
+        <div
           style={{
-            marginTop: "1rem",
+            marginTop: ".75rem",
             display: "flex",
             position: "relative",
+            alignItems: "center",
+            gap: ".5rem",
           }}
         >
-          Dakot<span style={{ color: "#9F7C19" }}>AI</span>:
-        </small>
+          <div className="smiley-container-small">
+            <Image alt="" src={KODA_THINK} width={40} height={50} />
+          </div>{" "}
+          <div className="message-name">
+            Dakot
+            <span style={{ color: "#9F7C19" }}>AI</span>:
+          </div>
+        </div>
       )}
       <ReactMarkdown
         rehypePlugins={[rehypeSanitize]}
