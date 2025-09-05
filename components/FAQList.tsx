@@ -2,8 +2,9 @@
 
 import { useMemo, useState } from "react";
 import { useGetFaqsQuery } from "../lib/services/faqBotApi";
-import SearchBar from "./SearchBar";
 import { MarkdownMessage } from "./MarkdownMessage";
+import KODA_FRUSTRATED from "../assets/koda-frustrated.png";
+import Image from "next/image";
 
 export default function FAQList() {
   const { data, isLoading, isError } = useGetFaqsQuery();
@@ -23,7 +24,14 @@ export default function FAQList() {
 
   if (isLoading) return <div>Loading...</div>;
   if (isError)
-    return <div>Ah nutz. Failed to load all the things. I'll try again.</div>;
+    return (
+      <div className="faq-error-msg">
+        <div className="smiley-container-medium">
+          <Image alt="" src={KODA_FRUSTRATED} width={80} height={100} />
+        </div>{" "}
+        Ah nutz! Failed to load FAQs. I'll try again.
+      </div>
+    );
 
   return (
     <div style={{ height: "fit-content" }}>
