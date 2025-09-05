@@ -1,5 +1,6 @@
 import "./globals.css";
 import { Providers } from "../lib/providers";
+import { Analytics } from "@vercel/analytics/next";
 
 export const metadata = {
   title: "DakotAI - Fullstack AI Engineer",
@@ -18,6 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        <Analytics />
         <Providers>
           <div className="container">{children}</div>
         </Providers>
