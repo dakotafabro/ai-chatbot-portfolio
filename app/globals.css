@@ -83,6 +83,16 @@ body {
   margin-top: 1.5rem;
 }
 
+.social-icon-link:hover {
+  fill: white;
+  transition: 120ms ease-in-out;
+}
+
+.resume-download {
+  flex-direction: row;
+  align-items: center;
+}
+
 input,
 button,
 textarea {

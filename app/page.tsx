@@ -1,5 +1,6 @@
 import Chatbot from "../components/Chatbot";
 import FAQList from "../components/FAQList";
+import SocialIcons from "../components/SocialIcons";
 import Image from "next/image";
 import smileySticker from "../assets/smile-sticker.png";
 
@@ -20,12 +21,21 @@ export default function HomePage() {
         </div>
         <div>
           <h1 style={{ marginBottom: 8 }}>
-            <span style={{ color: "#9F7C19" }}>Dakota Fabro</span>, Fullstack AI
-            Engineer
+            Dakot<span style={{ color: "#9F7C19" }}>AI</span> Fabro, Fullstack
+            AI Engineer
           </h1>
-          <p className="small" style={{ marginTop: 0 }}>
-            An interactive way to explore my work and story.
-          </p>
+          <div
+            style={{
+              marginTop: 0,
+              display: "flex",
+              flexDirection: "row",
+              alignItems: "center",
+              gap: "1rem",
+            }}
+          >
+            <span>An interactive way to explore my work and story</span>{" "}
+            <SocialIcons />
+          </div>
         </div>
       </div>
 
@@ -54,7 +64,17 @@ export default function HomePage() {
           {"  "}
           Dakota Fabro
         </a>{" "}
-        | All rights reserved.
+        | All rights reserved. |{" "}
+        <a
+          href="https://drive.google.com/file/d/1FnQ3mmRuQ-Uzr9o2Ay_TMckAMpnpGYrY/view?usp=drive_link"
+          target="_blank"
+          rel="noreferrer"
+          className="flex items-center gap-2"
+          title="Download Dakota's Resume"
+          style={{ color: "white", margin: ".5rem" }}
+        >
+          Download Dakota's Resume
+        </a>
       </small>
     </main>
   );

@@ -73,10 +73,9 @@ export function MarkdownMessage({ md, panelBg, role = "" }: Props) {
             marginTop: "1rem",
             display: "flex",
             position: "relative",
-            gap: ".25rem",
           }}
         >
-          DakotAI:
+          Dakot<span style={{ color: "#9F7C19" }}>AI</span>:
         </small>
       )}
       <ReactMarkdown
