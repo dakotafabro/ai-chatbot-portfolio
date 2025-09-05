@@ -29,32 +29,31 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <Suspense fallback={<div />}>
-          {children}
-
-          {gaId ? (
-            <>
-              {/* Load the GA library */}
-              <Script
-                src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}
-                strategy="afterInteractive"
-              />
-              {/* Initialize gtag */}
-              <Script id="ga-init" strategy="afterInteractive">
-                {`
+          <Providers>
+            {gaId ? (
+              <>
+                {/* Load the GA library */}
+                <Script
+                  src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}
+                  strategy="afterInteractive"
+                />
+                {/* Initialize gtag */}
+                <Script id="ga-init" strategy="afterInteractive">
+                  {`
                 window.dataLayer = window.dataLayer || [];
                 function gtag(){dataLayer.push(arguments);}
                 gtag('js', new Date());
                 gtag('config', '${gaId}', { send_page_view: false });
               `}
-              </Script>
-            </>
-          ) : null}
-          <Script id="ga-consent" strategy="afterInteractive">
-            {`gtag('consent', 'default', { ad_storage: 'denied', analytics_storage: 'denied' });`}
-          </Script>
-          <GAListener />
-          <Analytics />
-          <Providers>
+                </Script>
+              </>
+            ) : null}
+            <Script id="ga-consent" strategy="afterInteractive">
+              {`gtag('consent', 'default', { ad_storage: 'denied', analytics_storage: 'denied' });`}
+            </Script>
+            <GAListener />
+            <Analytics />
+
             <div className="container">{children}</div>
           </Providers>
         </Suspense>
