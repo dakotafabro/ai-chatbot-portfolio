@@ -1,9 +1,6 @@
 // components/Message.tsx
 import { MarkdownMessage } from "./MarkdownMessage";
 
-/**
- * Tiny presentational component keeps Chatbot lean.
- */
 export default function Message({
   role,
   content,
