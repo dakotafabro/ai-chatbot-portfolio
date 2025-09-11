@@ -6,7 +6,7 @@ import smileySticker from "../assets/smile-sticker.png";
 
 export const dynamic = "force-dynamic";
 
-export const RESUME_LINK = "https://drive.google.com/file/d/1i-WCl2JtsqBM614-QbuCsQCmVQ-_Lkig/view?usp=sharing"
+const RESUME_LINK = "https://drive.google.com/file/d/1i-WCl2JtsqBM614-QbuCsQCmVQ-_Lkig/view?usp=sharing"
 
 export default function HomePage() {
   return (
