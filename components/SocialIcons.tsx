@@ -2,7 +2,7 @@ import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 const ICON_COLOR = "#9F7C19";
 
-const SocialIcons = ({ resumeLink }) => {
+const SocialIcons = ({ resumeLink }: { resumeLink: string }) => {
   return (
     <div className="SocialIcons flex gap-4">
       <a
