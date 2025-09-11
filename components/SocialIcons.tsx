@@ -2,7 +2,7 @@ import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 const ICON_COLOR = "#9F7C19";
 
-const SocialIcons = () => {
+const SocialIcons = ({ resumeLink }) => {
   return (
     <div className="SocialIcons flex gap-4">
       <a
@@ -41,7 +41,7 @@ const SocialIcons = () => {
         </svg>
       </a>
       <a
-        href="https://drive.google.com/uc?export=download&id=1FnQ3mmRuQ-Uzr9o2Ay_TMckAMpnpGYrY"
+        href={resumeLink}
         target="_blank"
         rel="noopener noreferrer"
         className="flex items-center gap-2 resume-download"

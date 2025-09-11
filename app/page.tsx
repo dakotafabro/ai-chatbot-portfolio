@@ -6,6 +6,8 @@ import smileySticker from "../assets/smile-sticker.png";
 
 export const dynamic = "force-dynamic";
 
+export const RESUME_LINK = "https://drive.google.com/file/d/1i-WCl2JtsqBM614-QbuCsQCmVQ-_Lkig/view?usp=sharing"
+
 export default function HomePage() {
   return (
     <main>
@@ -34,7 +36,7 @@ export default function HomePage() {
             }}
           >
             <span>An interactive way to explore my work and story</span>{" "}
-            <SocialIcons />
+            <SocialIcons resumeLink={RESUME_LINK} />
           </div>
         </div>
       </div>
@@ -66,7 +68,7 @@ export default function HomePage() {
         </a>{" "}
         | All rights reserved. |{" "}
         <a
-          href="https://drive.google.com/file/d/1FnQ3mmRuQ-Uzr9o2Ay_TMckAMpnpGYrY/view?usp=drive_link"
+          href={RESUME_LINK}
           target="_blank"
           rel="noreferrer"
           className="flex items-center gap-2"
