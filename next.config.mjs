@@ -3,6 +3,7 @@
  * later in the course, we can expand this file as needed.
  */
 const nextConfig = {
+  basePath: "/chat",
   reactStrictMode: true,
   experimental: {
     serverActions: {
